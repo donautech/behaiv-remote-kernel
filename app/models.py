@@ -19,6 +19,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     token = db.Column(db.String, index=True)
     login = db.Column(db.String)
+    verification_token = db.Column(db.String)  # verification token is used for re-attachment of user to different token
 
     def as_dict(self):
         return {c.name: getattr(self, c.name) for c in self.__table__.columns}
