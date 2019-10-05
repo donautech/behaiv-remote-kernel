@@ -1,0 +1,26 @@
+{
+  "name": "behaiv-remote-kernel",
+  "version": "1.0.0",
+  "description": "![Behaiv logo](https://github.com/dmi3coder/behaiv-java/raw/master/docs/img/behaiv_logo.png)",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "build": "echo 'build script executed'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/donautech/behaiv-remote-kernel.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/donautech/behaiv-remote-kernel/issues"
+  },
+  "homepage": "https://github.com/donautech/behaiv-remote-kernel#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1"
+  }
+}
