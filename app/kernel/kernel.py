@@ -3,7 +3,7 @@ class Kernel:
     def __init__(self, kernel_id):
         self.kernel_id = kernel_id
         self.data = []
-        self.threshold = 20
+        self.threshold = 100
         self.partial_fit_allowed = False
         self.always_keep_data = True
 
