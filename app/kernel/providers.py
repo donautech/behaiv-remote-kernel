@@ -17,6 +17,7 @@ class KernelProvider(injector.Module):
 
     @injector.inject
     def create(self) -> Kernel:
+        # TODO implement real logistic kernel instead of a stub
         token = request.headers['Authorization']
         if token in self.kernels:
             return self.kernels[token]
