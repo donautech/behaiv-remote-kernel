@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      dockerfile: client/flask/Dockerfile
+      args:
+        - ENVIRONMENT=production
+        - PORT=5000
+    volumes:
+      - .:/app
+      - flask-static:/app/static
+    ports:
+      - 5000:5000
+
+volumes:
+    flask-static:
