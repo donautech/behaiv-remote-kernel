@@ -6,6 +6,13 @@
 ## Remote Kernel makes Behaiv more dynamic
 Remote Kernel moves all the logic and computation from mobile device to a powerful cloud. 
 More dynamic, flexible and powerful. Easy to integrate with existing application
+
+### How to use?
+
+#### Plain python
+
+//TODO
+
  
 ### Looking for other languages?
 Behaiv has different implementations(though many of them is in progress of development). 
