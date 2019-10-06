@@ -5,7 +5,7 @@ services:
     container_name: app
     build:
       context: .
-      dockerfile: client/flask/Dockerfile
+      dockerfile: docker/flask/Dockerfile
       args:
         - ENVIRONMENT=production
         - PORT=5000

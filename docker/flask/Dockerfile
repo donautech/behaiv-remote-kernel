@@ -31,4 +31,4 @@ RUN pip install -r requirements/$ENVIRONMENT.txt
 
 COPY . .
 
-ENTRYPOINT /bin/bash /app/client/flask/start.sh $ENVIRONMENT
+ENTRYPOINT /bin/bash /app/docker/flask/start.sh $ENVIRONMENT
