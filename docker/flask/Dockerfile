@@ -4,6 +4,7 @@ ARG ENVIRONMENT
 ARG PORT=${POST}
 
 ENV ENVIRONMENT=${ENVIRONMENT}
+CMD ./client_dev.sh
 
 WORKDIR /app
 
@@ -18,13 +19,6 @@ RUN apk --no-cache add \
      libffi-dev \
      musl-dev \
      sqlite
-
-COPY package.json /app/package.json
-RUN npm install
-
-RUN mkdir -p ./static
-RUN RUNPUBLIC_URL=http://127.0.0.1:$PORT/ npm run build
-#RUN mv ./build/** ./static  Put the build folder in the current directory and remove this line from the comments
 
 COPY requirements requirements
 RUN pip install -r requirements/$ENVIRONMENT.txt
