@@ -23,3 +23,22 @@ Behaiv has different implementations(though many of them is in progress of devel
 |[behaiv-android](https://github.com/dmi3coder/behaiv-android)(extension)| Java | [![](https://jitpack.io/v/dmi3coder/behaiv-android.svg)](https://jitpack.io/#dmi3coder/behaiv-android)| dmi3coder|
 |[behaiv-swift](https://github.com/donautech/behaiv-swift)| Swift |November-December, 2019|DonauTech & dmi3coder|
 |[behaiv-js]()| JavaScript | December, 2019|DonauTech & dmi3coder
+
+
+### How to run?
+
+##### Run development environment
+
+```sh 
+$ git clone https://github.com/donautech/behaiv-remote-kernel
+$ cd behaiv-remote-kernel
+$ docker-compose -f docker-compose.development.yml up --build 
+```
+
+##### Run production environment
+
+```sh 
+$ git clone https://github.com/donautech/behaiv-remote-kernel
+$ cd behaiv-remote-kernel
+$ docker-compose -f docker-compose.production.yml up --build 
+```
