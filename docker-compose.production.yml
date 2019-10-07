@@ -1,19 +1,14 @@
 version: "3.7"
 
+# TODO attach volume for db on release
 services:
   app:
     container_name: app
     build:
       context: .
-      dockerfile: docker/flask/Dockerfile
+      dockerfile: docker/Dockerfile
       args:
         - ENVIRONMENT=production
         - PORT=5000
-    volumes:
-      - .:/app
-      - flask-static:/app/static
     ports:
       - 5000:5000
-
-volumes:
-    flask-static:

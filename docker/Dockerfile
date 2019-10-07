@@ -23,6 +23,10 @@ RUN apk --no-cache add \
 COPY requirements requirements
 RUN pip install -r requirements/$ENVIRONMENT.txt
 
-COPY . .
+COPY /app ./app
+COPY /config.py ./config.py
+COPY /migrations ./migrations
+COPY /remote_kernel.py ./remote_kernel.py
+COPY /docker/start.sh ./docker/start.sh
 
-ENTRYPOINT /bin/bash /app/docker/flask/start.sh $ENVIRONMENT
+ENTRYPOINT /bin/bash /app/docker/start.sh $ENVIRONMENT

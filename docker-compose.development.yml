@@ -6,7 +6,7 @@ services:
     restart: always
     build:
       context: .
-      dockerfile: docker/flask/Dockerfile
+      dockerfile: docker/Dockerfile
       args:
         - ENVIRONMENT=development
         - PORT=5000
