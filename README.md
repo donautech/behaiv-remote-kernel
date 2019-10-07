@@ -7,24 +7,6 @@
 Remote Kernel moves all the logic and computation from mobile device to a powerful cloud. 
 More dynamic, flexible and powerful. Easy to integrate with existing application
 
-### How to use?
-
-#### Plain python
-
-//TODO
-
- 
-### Looking for other languages?
-Behaiv has different implementations(though many of them is in progress of development). 
-
-| Project | Language | Version/Arriving date | Developed by |
-|---------|----------|---------|--------------|
-|[behaiv-java](https://github.com/dmi3coder/behaiv-java)| Java | [![](https://jitpack.io/v/dmi3coder/behaiv-java.svg)](https://jitpack.io/#dmi3coder/behaiv-java) |dmi3coder|
-|[behaiv-android](https://github.com/dmi3coder/behaiv-android)(extension)| Java | [![](https://jitpack.io/v/dmi3coder/behaiv-android.svg)](https://jitpack.io/#dmi3coder/behaiv-android)| dmi3coder|
-|[behaiv-swift](https://github.com/donautech/behaiv-swift)| Swift |November-December, 2019|DonauTech & dmi3coder|
-|[behaiv-js]()| JavaScript | December, 2019|DonauTech & dmi3coder
-
-
 ### How to run?
 
 ##### Run development environment
@@ -42,3 +24,15 @@ $ git clone https://github.com/donautech/behaiv-remote-kernel
 $ cd behaiv-remote-kernel
 $ docker-compose -f docker-compose.production.yml up --build 
 ```
+
+ 
+### Looking for other languages?
+Behaiv has different implementations(though many of them is in progress of development). 
+
+| Project | Language | Version/Arriving date | Developed by |
+|---------|----------|---------|--------------|
+|[behaiv-java](https://github.com/dmi3coder/behaiv-java)| Java | [![](https://jitpack.io/v/dmi3coder/behaiv-java.svg)](https://jitpack.io/#dmi3coder/behaiv-java) |dmi3coder|
+|[behaiv-android](https://github.com/dmi3coder/behaiv-android)(extension)| Java | [![](https://jitpack.io/v/dmi3coder/behaiv-android.svg)](https://jitpack.io/#dmi3coder/behaiv-android)| dmi3coder|
+|[behaiv-swift](https://github.com/donautech/behaiv-swift)| Swift |November-December, 2019|DonauTech & dmi3coder|
+|[behaiv-js]()| JavaScript | December, 2019|DonauTech & dmi3coder
+
