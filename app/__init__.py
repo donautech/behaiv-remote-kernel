@@ -24,7 +24,7 @@ from app.user import bp as user_bp
 from app.kernel import providers
 
 INJECTOR_DEFAULT_MODULES = dict(
-    kernel=providers.KenrelProvider
+    kernel=providers.KernelProvider
 )
 
 app.register_blueprint(client_bp, url_prefix='/')

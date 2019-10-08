@@ -28,3 +28,12 @@ class Kernel:
 
     def restore(self, storage):
         pass
+
+    def stats(self):
+        return {
+            'id': self.kernel_id,
+            'data_size': len(self.data),
+            'threshold': self.threshold,
+            'partial_fit_allowed': self.partial_fit_allowed,
+            'always_keep_data': self.always_keep_data
+        }
