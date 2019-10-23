@@ -26,10 +26,10 @@ def ready_to_predict(kernel: Kernel):
 
 
 @injector.inject
-@bp.route("/feed")
+@bp.route("/feed", methods=['POST'])
 def feed_data(kernel: Kernel):
     new_data = request.json
-    kernel.data.extend(new_data)
+    kernel.update_single(new_data)
     return 'OK'
 
 
