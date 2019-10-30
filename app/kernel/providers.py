@@ -3,7 +3,7 @@ import injector
 from flask import request
 
 from app.kernel.kernel import Kernel
-from app.kernel.logistic import LogisticKernel
+from app.kernel.logistic.LogisticRegressionKernel import LogisticKernel
 
 
 class KernelProvider(injector.Module):
