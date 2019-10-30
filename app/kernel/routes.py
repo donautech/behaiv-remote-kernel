@@ -22,22 +22,22 @@ def test_kernel(kernel: Kernel):
 @injector.inject
 @bp.route("/predictionReady")
 def ready_to_predict(kernel: Kernel):
-    return kernel.ready_to_predict()
+    return Response('{"predictionReady":true}' if kernel.ready_to_predict() else '{"predictionReady":false}',mimetype='application/json')
 
 
 @injector.inject
-@bp.route("/feed")
+@bp.route("/feed", methods=['POST'])
 def feed_data(kernel: Kernel):
     new_data = request.json
-    kernel.data.extend(new_data)
+    kernel.update_single(new_data)
     return 'OK'
 
 
 @injector.inject
 @bp.route("/predict")
 def predict(kernel: Kernel):
-    features = request.json
-    return kernel.predict_one(features)
+    features = request.json['features']
+    return str(kernel.predict_one(features)), 200
 
 
 @injector.inject

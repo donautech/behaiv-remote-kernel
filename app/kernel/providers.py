@@ -3,6 +3,7 @@ import injector
 from flask import request
 
 from app.kernel.kernel import Kernel
+from app.kernel.logistic.LogisticRegressionKernel import LogisticKernel
 
 
 class KernelProvider(injector.Module):
@@ -17,11 +18,12 @@ class KernelProvider(injector.Module):
 
     @injector.inject
     def create(self) -> Kernel:
-        # TODO implement real logistic kernel instead of a stub
         token = request.headers['Authorization']
         if token in self.kernels:
             return self.kernels[token]
         else:
-            kernel = Kernel(token)
+            kernel = LogisticKernel(token)
+            if kernel.ready_to_predict():
+                kernel.fit()
             self.kernels[token] = kernel
             return kernel
