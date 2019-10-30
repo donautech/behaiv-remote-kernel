@@ -5,7 +5,7 @@ class Kernel:
 
     def __init__(self, kernel_id):
         self.kernel_id = kernel_id
-        self.threshold = 100
+        self.threshold = 10
         self.partial_fit_allowed = False
         self.always_keep_data = True
 
@@ -25,6 +25,8 @@ class Kernel:
 
     def update_single(self, entry):
         storage.save_data(self.kernel_id, entry)
+        if self.ready_to_predict():
+            self.fit()
 
     def predict_one(self, features):
         pass
