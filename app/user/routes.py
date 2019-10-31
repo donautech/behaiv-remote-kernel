@@ -21,3 +21,9 @@ def register_user():
     db.session.add(new_user)
     db.session.commit()
     return Response(json.dumps(new_user, cls=AlchemyEncoder), mimetype='application/json')
+
+
+@bp.route('/', methods=['GET'])
+def get_users():
+    users = User.query.all()
+    return Response(json.dumps(users, cls=AlchemyEncoder), mimetype='application/json')
