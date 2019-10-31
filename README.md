@@ -1,7 +1,7 @@
 # Remote Kernel for behaiv
 ![Behaiv logo](https://github.com/dmi3coder/behaiv-java/raw/master/docs/img/behaiv_logo.png)
 
-[![Release](https://img.shields.io/github/v/release/donautech/behaiv-remote-kernel?include_prereleases)](https://github.com/donautech/behaiv-remote-kernel/releases) [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/)
+[![Build Status](https://travis-ci.com/donautech/behaiv-remote-kernel.svg?branch=master)](https://travis-ci.com/donautech/behaiv-remote-kernel) [![Coverage Status](https://coveralls.io/repos/github/donautech/behaiv-remote-kernel/badge.svg?branch=master)](https://coveralls.io/github/donautech/behaiv-remote-kernel?branch=master) [![Release](https://img.shields.io/github/v/release/donautech/behaiv-remote-kernel?include_prereleases)](https://github.com/donautech/behaiv-remote-kernel/releases) [![Python 3.6](https://img.shields.io/badge/python-3.6-blue.svg)](https://www.python.org/downloads/release/python-360/) 
 
 ## Remote Kernel makes Behaiv more dynamic
 Remote Kernel moves all the logic and computation from mobile device to a powerful cloud. 
