@@ -15,6 +15,13 @@ from app.models import Config
 @injector.inject
 @bp.route("/")
 def test_kernel(kernel: Kernel):
+    """
+    Method that ensures you're on the right track
+    ---
+    responses:
+      200:
+        description: Dependency injection and API routing is working
+    """
     print(kernel)
     return 'OK'
 
