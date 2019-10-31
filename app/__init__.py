@@ -7,7 +7,7 @@ from flask_sqlalchemy import SQLAlchemy
 
 from config import Config
 
-app = Flask(__name__, static_url_path='/')
+app = Flask(__name__, static_url_path='/web')
 
 app.config.from_object(Config)
 db = SQLAlchemy(app)
