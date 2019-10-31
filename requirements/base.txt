@@ -5,3 +5,4 @@ flask-mail==0.9.1
 flask-migrate==2.5.2
 flask-swagger
 flask-swagger-ui
+flask_injector
