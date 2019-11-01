@@ -35,6 +35,33 @@ def ready_to_predict(kernel: Kernel):
 @injector.inject
 @bp.route("/feed", methods=['POST'])
 def feed_data(kernel: Kernel):
+    """
+    Feed network with more data
+    ---
+    tags:
+        - kernel
+    parameters:
+        - in: body
+          name: body
+          schema:
+            id: KernelData
+            required:
+                - features
+                - label
+            properties:
+                features:
+                    type: object
+                    additionalProperties:
+                        type: integer
+                label:
+                    type: string
+                    description: label for features
+    responses:
+        200:
+            description: data saved successfuly
+        500:
+            description: some problems occurred from backend side
+    """
     new_data = request.json
     kernel.update_single(new_data)
     return 'OK'
@@ -43,6 +70,29 @@ def feed_data(kernel: Kernel):
 @injector.inject
 @bp.route("/predict")
 def predict(kernel: Kernel):
+    """
+    Feed network with more data
+    ---
+    tags:
+        - kernel
+    parameters:
+        - in: body
+          name: body
+          schema:
+            id: KernelData
+            required:
+                - features
+            properties:
+                features:
+                    type: object
+                    additionalProperties:
+                        type: integer
+    responses:
+        200:
+            description: data saved successfuly
+        500:
+            description: some problems occurred from backend side
+    """
     features = request.json['features']
     return str(kernel.predict_one(features)), 200
 
