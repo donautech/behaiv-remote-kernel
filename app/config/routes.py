@@ -60,6 +60,7 @@ def update_config(id):
     parameters:
         - in: path
           name: id
+          "type": "string"
           description: id of existing config
         - in: body
           name: body
