@@ -35,10 +35,8 @@ def register_user():
     responses:
         200:
             description: If network is ready to predict
-            content:
-                application/json:
-                    schema:
-                        $ref: '#/definitions/User'
+            schema:
+                $ref: '#/definitions/User'
 
         500:
             description: some problems occurred from backend side

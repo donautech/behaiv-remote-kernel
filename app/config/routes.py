@@ -61,6 +61,7 @@ def update_config(id):
         - in: path
           name: id
           "type": "string"
+          required: true
           description: id of existing config
         - in: body
           name: body
@@ -110,10 +111,8 @@ def get_configs():
     responses:
         200:
             description: returns all the config objects
-            content:
-                application/json:
-                    schema:
-                        $ref: '#/definitions/Config'
+            schema:
+                $ref: '#/definitions/Config'
         404:
             description: no object was found
         500:
@@ -133,6 +132,7 @@ def delete_config(id):
         - in: path
           name: id
           type: string
+          required: true
           description: id of existing config
     responses:
         200:

@@ -37,14 +37,12 @@ def ready_to_predict(kernel: Kernel):
     responses:
         200:
             description: If network is ready to predict
-            content:
-                application/json:
-                    schema:
-                        type: object
-                        properties:
-                            predictionReady:
-                                type: boolean
-                                description: Network ready to predict
+            schema:
+                type: object
+                properties:
+                    predictionReady:
+                        type: boolean
+                        description: Network ready to predict
     """
     return Response('{"predictionReady":true}' if kernel.ready_to_predict() else '{"predictionReady":false}',
                     mimetype='application/json')
@@ -108,14 +106,12 @@ def predict(kernel: Kernel):
     responses:
         200:
             description: If network is ready to predict
-            content:
-                application/json:
-                    schema:
-                        type: object
-                        properties:
-                            label:
-                                type: string
-                                description: predicted label
+            schema:
+                type: object
+                properties:
+                    label:
+                        type: string
+                        description: predicted label
 
         500:
             description: some problems occurred from backend side
