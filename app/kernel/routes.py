@@ -43,7 +43,7 @@ def ready_to_predict(kernel: Kernel):
                         type: object
                         properties:
                             predictionReady:
-                                type: bool
+                                type: boolean
                                 description: Network ready to predict
     """
     return Response('{"predictionReady":true}' if kernel.ready_to_predict() else '{"predictionReady":false}',
