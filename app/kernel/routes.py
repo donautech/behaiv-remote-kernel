@@ -1,5 +1,5 @@
 import injector
-from flask import Response
+from flask import Response, jsonify
 from flask import json
 from flask import request
 
@@ -29,7 +29,25 @@ def test_kernel(kernel: Kernel):
 @injector.inject
 @bp.route("/predictionReady")
 def ready_to_predict(kernel: Kernel):
-    return Response('{"predictionReady":true}' if kernel.ready_to_predict() else '{"predictionReady":false}',mimetype='application/json')
+    """
+    Checks if netowrk is ready for prediction
+    ---
+    tags:
+        - kernel
+    responses:
+        200:
+            description: If network is ready to predict
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            predictionReady:
+                                type: bool
+                                description: Network ready to predict
+    """
+    return Response('{"predictionReady":true}' if kernel.ready_to_predict() else '{"predictionReady":false}',
+                    mimetype='application/json')
 
 
 @injector.inject
@@ -89,12 +107,21 @@ def predict(kernel: Kernel):
                         type: integer
     responses:
         200:
-            description: data saved successfuly
+            description: If network is ready to predict
+            content:
+                application/json:
+                    schema:
+                        type: object
+                        properties:
+                            label:
+                                type: string
+                                description: predicted label
+
         500:
             description: some problems occurred from backend side
     """
     features = request.json['features']
-    return str(kernel.predict_one(features)), 200
+    return jsonify({"label": str(kernel.predict_one(features))}), 200
 
 
 @injector.inject
