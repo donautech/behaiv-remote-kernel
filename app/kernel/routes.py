@@ -84,7 +84,7 @@ def feed_data(kernel: Kernel):
 
 
 @injector.inject
-@bp.route("/predict")
+@bp.route("/predict", methods=['POST'])
 def predict(kernel: Kernel):
     """
     Feed network with more data

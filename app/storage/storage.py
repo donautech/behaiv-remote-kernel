@@ -11,7 +11,10 @@ def save_data(kernel_id, data):
 
 
 def data_amount(kernel_id):
-    return len(data_tb.find_one({"id": kernel_id})["data"])
+    data_ = data_tb.find_one({"id": kernel_id})
+    if data_ is None:
+        return 0
+    return len(data_["data"])
 
 
 def get_data(kernel_id):

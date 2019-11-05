@@ -18,7 +18,7 @@ class KernelProvider(injector.Module):
 
     @injector.inject
     def create(self) -> Kernel:
-        token = request.headers['Authorization']
+        token = request.headers['Authorization'][7:]
         if token in self.kernels:
             return self.kernels[token]
         else:

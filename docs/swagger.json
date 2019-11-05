@@ -2,7 +2,7 @@
     "swagger": "2.0",
     "info": {
         "version": "0.1.0",
-        "title": "Behaiv remote kernel"
+        "title": "Behaiv Remote Kernel"
     },
     "paths": {
         "/kernel/predictionReady": {
@@ -29,7 +29,7 @@
             }
         },
         "/kernel/predict": {
-            "get": {
+            "post": {
                 "summary": "Feed network with more data",
                 "description": "",
                 "responses": {
@@ -267,7 +267,7 @@
                 "features": {
                     "type": "object",
                     "additionalProperties": {
-                        "type": "integer"
+                        "type": "number"
                     }
                 },
                 "label": {
@@ -311,5 +311,6 @@
                 }
             }
         }
-    }
+    },
+    "host": "localhost:5000"
 }
