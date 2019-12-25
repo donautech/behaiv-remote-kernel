@@ -4,13 +4,13 @@ from flask import request
 
 from app.kernel.kernel import Kernel
 from app.kernel.logistic.LogisticRegressionKernel import LogisticKernel
-from app.storage.storage import MongoStorage
+from app.storage.storage import Storage, MongoStorage
 
 
-class KernelProvider(injector.Module):
+class StorageProvider(injector.Module):
 
     def __init__(self):
-        self.kernels = {}
+        self.storages = {}
 
     def configure(self, binder):
         binder.bind(Kernel,
@@ -18,13 +18,11 @@ class KernelProvider(injector.Module):
                     scope=flask_injector.request)
 
     @injector.inject
-    def create(self) -> Kernel:
+    def create(self) -> Storage:
         token = request.headers['Authorization'][7:]
-        if token in self.kernels:
-            return self.kernels[token]
+        if token in self.storages:
+            return self.storages[token]
         else:
-            kernel = LogisticKernel(token, MongoStorage())
-            if kernel.ready_to_predict():
-                kernel.fit()
-            self.kernels[token] = kernel
-            return kernel
+            storage = MongoStorage()
+            self.storages[token] = storage
+            return storage

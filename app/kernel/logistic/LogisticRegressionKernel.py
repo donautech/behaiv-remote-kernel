@@ -4,12 +4,13 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.preprocessing import LabelEncoder
 
 from app.kernel.kernel import Kernel
+from app.storage.storage import MongoStorage
 
 
 class LogisticKernel(Kernel):
 
-    def __init__(self, kernel_id):
-        super().__init__(kernel_id)
+    def __init__(self, kernel_id, storage=MongoStorage()):
+        super().__init__(kernel_id, storage)
         self.reg: LogisticRegression or None = None
         self.le = LabelEncoder()
 

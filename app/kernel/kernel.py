@@ -1,30 +1,31 @@
-from app.storage import storage
 
 
 class Kernel:
+    DEFAULT_THRESHOLD = 10
 
-    def __init__(self, kernel_id):
+    def __init__(self, kernel_id, storage):
         self.kernel_id = kernel_id
-        self.threshold = 10
+        self.threshold = Kernel.DEFAULT_THRESHOLD
         self.partial_fit_allowed = False
         self.always_keep_data = True
+        self.storage = storage
 
     @property
     def data(self):
-        return storage.get_data(self.kernel_id)
+        return self.storage.get_data(self.kernel_id)
 
     @property
     def empty(self):
-        return storage.data_amount(self.kernel_id) == 0
+        return self.storage.data_amount(self.kernel_id) == 0
 
     def fit(self):
         pass
 
     def ready_to_predict(self):
-        return storage.data_amount(self.kernel_id) >= self.threshold
+        return self.storage.data_amount(self.kernel_id) >= self.threshold
 
     def update_single(self, entry):
-        storage.save_data(self.kernel_id, entry)
+        self.storage.save_data(self.kernel_id, entry)
         if self.ready_to_predict():
             self.fit()
 
